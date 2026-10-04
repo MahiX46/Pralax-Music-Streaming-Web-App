@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | Pralax 🎵</title>
+
+    <link rel="stylesheet"
+          href="../css/login.css">
+</head>
+
+
+<body>
+
+    <main class="auth-page">
+
+        <div class="auth-container">
+
+            <!-- BRAND -->
+            <a href="index.html"
+               class="auth-brand">
+                Pralax <span>🎵</span>
+            </a>
+
+
+            <!-- HEADING -->
+            <div class="auth-heading">
+
+                <h1>Create your account</h1>
+
+                <p>
+                    Sign up to continue to Pralax
+                </p>
+
+            </div>
+
+
+            <!-- REGISTER FORM -->
+            <form
+                id="registerForm"
+                onsubmit="registerUser(event)"
+                class="auth-form"
+            >
+
+                <!-- NAME -->
+                <div class="input-group">
+
+                    <label for="registerName">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Enter your name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="input-group">
+
+                    <label for="registerEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="input-group">
+
+                    <label for="registerPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Create a password"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+                <div class="input-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Enter password again"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- MESSAGE FROM AUTH.JS -->
+                <p id="authMessage"
+                   class="auth-message">
+                </p>
+
+
+                <!-- SIGN UP -->
+                <button
+                    type="submit"
+                    class="auth-button"
+                >
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <!-- DIVIDER -->
+            <div class="divider">
+
+                <span></span>
+
+                <p>OR</p>
+
+                <span></span>
+
+            </div>
+
+
+            <!-- LOGIN -->
+            <div class="auth-footer">
+
+                <p>
+                    Already have an account?
+                </p>
+
+                <a href="login.html"
+                   class="secondary-button">
+                    Log in to Pralax
+                </a>
+
+            </div>
+
+
+            <!-- HOME -->
+            <a href="index.html"
+               class="back-home">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script src="../js/auth.js"></script>
+
+</body>
+
+</html>

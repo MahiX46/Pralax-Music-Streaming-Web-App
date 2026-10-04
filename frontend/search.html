@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Search | Pralax 🎵</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         SIDEBAR
+         ========================================== -->
+
+    <nav class="sidebar">
+
+        <div class="brand">
+            <img src="../images/sidebar.png"
+                 alt="Pralax">
+        </div>
+
+        <div class="navigation">
+
+            <a href="index.html"
+               class="nav-link">
+                <span>🏠 Home</span>
+            </a>
+
+            <a href="search.html"
+               class="nav-link active">
+                <span>🔍 Search</span>
+            </a>
+
+            <a href="library.html"
+               class="nav-link">
+                <span>🎵 Your Library</span>
+            </a>
+
+        </div>
+
+
+        <div class="playlist-menu">
+
+            <h3>Your Music</h3>
+
+            <a href="library.html"
+               class="nav-link">
+                <span>❤️ Liked Songs</span>
+            </a>
+
+            <a href="playlist.html"
+               class="nav-link">
+                <span>🎶 My Playlist</span>
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+         ========================================== -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="search-container">
+
+                <input
+                    type="text"
+                    id="searchPageInput"
+                    placeholder="Search songs, artists or albums..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    id="searchPageButton"
+                >
+                    🔍
+                </button>
+
+            </div>
+
+
+            <div
+                id="authArea"
+                class="auth-area">
+            </div>
+
+        </header>
+
+
+        <!-- ==========================================
+             SEARCH HEADING
+             ========================================== -->
+
+        <section class="music-section">
+
+            <div class="section-header">
+
+                <h2>Search Pralax</h2>
+
+            </div>
+
+            <p id="searchMessage">
+                Search for your favourite songs, artists or albums.
+            </p>
+
+        </section>
+
+
+        <!-- ==========================================
+             SEARCH RESULTS
+             ========================================== -->
+
+        <section class="music-section">
+
+            <div class="section-header">
+
+                <h2>Results</h2>
+
+            </div>
+
+            <div
+                id="searchResults"
+                class="song-list">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         MUSIC PLAYER
+         ========================================== -->
+
+    <div class="music-player">
+
+        <!-- NOW PLAYING -->
+
+        <div class="now-playing">
+
+            <img
+                id="playerCover"
+                src="../images/logo.png"
+                alt="Song Cover"
+            >
+
+            <div class="song-details">
+
+                <h4 id="playerTitle">
+                    Select a song
+                </h4>
+
+                <p id="playerArtist">
+                    Pralax
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PLAYER CONTROLS -->
+
+        <div class="player-center">
+
+            <div class="player-buttons">
+
+                <button onclick="previousSong()">
+                    ⏮
+                </button>
+
+                <button
+                    id="playButton"
+                    class="play-button"
+                    onclick="togglePlay()"
+                >
+                    ▶
+                </button>
+
+                <button onclick="nextSong()">
+                    ⏭
+                </button>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <span id="currentTime">
+                    0:00
+                </span>
+
+                <input
+                    type="range"
+                    id="progressBar"
+                    min="0"
+                    max="100"
+                    value="0"
+                    oninput="changeProgress()"
+                >
+
+                <span id="duration">
+                    0:00
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- VOLUME -->
+
+        <div class="volume-container">
+
+            <span>🔊</span>
+
+            <input
+                type="range"
+                id="volumeBar"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+                oninput="changeVolume()"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- AUDIO -->
+
+    <audio
+        id="audioPlayer"
+        preload="metadata">
+    </audio>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
+
+    <script src="../js/player.js"></script>
+
+    <script src="../js/search.js"></script>
+
+    <script src="../js/auth.js"></script>
+
+</body>
+
+</html>

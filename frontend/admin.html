@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard | Pralax 🎵</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- ==========================================
+         SIDEBAR
+    ========================================== -->
+
+    <nav class="sidebar">
+
+        <!-- PRALAX IMAGE -->
+
+        <div class="brand">
+            <img
+                src="../images/sidebar.png"
+                alt="Pralax"
+            >
+        </div>
+
+
+        <!-- ADMIN NAVIGATION -->
+
+        <div class="navigation">
+
+            <a
+                href="admin.html"
+                class="nav-link active"
+            >
+                <span>📊 Dashboard</span>
+            </a>
+
+            <a
+                href="#manageSongs"
+                class="nav-link"
+            >
+                <span>🎵 Manage Songs</span>
+            </a>
+
+            <a
+                href="#manageUsers"
+                class="nav-link"
+            >
+                <span>👤 Manage Users</span>
+            </a>
+
+        </div>
+
+
+        <div class="playlist-menu">
+
+            <h3>PRALAX ADMIN</h3>
+
+            <a
+                href="index.html"
+                class="nav-link"
+            >
+                <span>🏠 Back to Pralax</span>
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content admin-main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="admin-topbar">
+
+            <div>
+
+                <p class="admin-small-title">
+                    PRALAX ADMIN
+                </p>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p class="admin-subtitle">
+                    Manage your Pralax music platform.
+                </p>
+
+            </div>
+
+
+            <a
+                href="index.html"
+                class="admin-home-button"
+            >
+                Open Pralax
+            </a>
+
+        </header>
+
+
+        <!-- ==========================================
+             DASHBOARD CARDS
+        ========================================== -->
+
+        <section class="admin-stats">
+
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon">
+                    🎵
+                </div>
+
+                <div>
+
+                    <p>Total Songs</p>
+
+                    <h2 id="adminSongCount">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon">
+                    👤
+                </div>
+
+                <div>
+
+                    <p>Registered Users</p>
+
+                    <h2 id="adminUserCount">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon">
+                    ❤️
+                </div>
+
+                <div>
+
+                    <p>Liked Songs</p>
+
+                    <h2 id="adminLikeCount">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-stat-card">
+
+                <div class="admin-stat-icon">
+                    💿
+                </div>
+
+                <div>
+
+                    <p>Albums</p>
+
+                    <h2 id="adminAlbumCount">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             MANAGE SONGS
+        ========================================== -->
+
+        <section
+            id="manageSongs"
+            class="admin-section"
+        >
+
+            <div class="admin-section-heading">
+
+                <div>
+
+                    <h2>
+                        Manage Songs
+                    </h2>
+
+                    <p>
+                        Songs available on the Pralax platform.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SONG TABLE HEADER -->
+
+            <div class="admin-song-header">
+
+                <span>#</span>
+
+                <span>Song</span>
+
+                <span>Artist</span>
+
+                <span>Album</span>
+
+                <span>Action</span>
+
+            </div>
+
+
+            <!-- SONGS COME FROM BACKEND -->
+
+            <div id="adminSongList">
+
+                <p class="admin-loading">
+                    Loading songs...
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             MANAGE USERS
+        ========================================== -->
+
+        <section
+            id="manageUsers"
+            class="admin-section"
+        >
+
+            <div class="admin-section-heading">
+
+                <div>
+
+                    <h2>
+                        Manage Users
+                    </h2>
+
+                    <p>
+                        Users registered with Pralax.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- USER TABLE HEADER -->
+
+            <div class="admin-user-header">
+
+                <span>#</span>
+
+                <span>Name</span>
+
+                <span>Email</span>
+
+                <span>Status</span>
+
+            </div>
+
+
+            <div id="adminUserList">
+
+                <p class="admin-loading">
+                    Loading users...
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="../js/admin.js"></script>
+
+</body>
+
+</html>

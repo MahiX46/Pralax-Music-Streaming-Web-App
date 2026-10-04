@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Pralax 🎵</title>
+
+    <!-- SAME BURGUNDY AUTH THEME -->
+    <link rel="stylesheet"
+          href="../css/login.css">
+
+</head>
+
+
+<body>
+
+    <main class="auth-page">
+
+        <div class="auth-container">
+
+
+            <!-- BRAND -->
+
+            <a href="index.html"
+               class="auth-brand">
+
+                Pralax <span>🎵</span>
+
+            </a>
+
+
+            <!-- HEADING -->
+
+            <div class="auth-heading">
+
+                <h1>
+                    Welcome back
+                </h1>
+
+                <p>
+                    Log in to continue listening
+                </p>
+
+            </div>
+
+
+            <!-- LOGIN FORM -->
+
+            <form
+                id="loginForm"
+                class="auth-form"
+                onsubmit="loginUser(event)"
+            >
+
+
+                <!-- EMAIL -->
+
+                <div class="input-group">
+
+                    <label for="loginEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="input-group">
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- LOGIN MESSAGE -->
+
+                <p
+                    id="authMessage"
+                    class="auth-message">
+                </p>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="auth-button"
+                >
+
+                    Log In
+
+                </button>
+
+
+            </form>
+
+
+            <!-- DIVIDER -->
+
+            <div class="divider">
+
+                <span></span>
+
+                <p>OR</p>
+
+                <span></span>
+
+            </div>
+
+
+            <!-- SIGNUP -->
+
+            <div class="auth-footer">
+
+                <p>
+                    New to Pralax?
+                </p>
+
+                <a
+                    href="register.html"
+                    class="secondary-button"
+                >
+
+                    Create an Account
+
+                </a>
+
+            </div>
+
+
+            <!-- BACK HOME -->
+
+            <a
+                href="index.html"
+                class="back-home"
+            >
+
+                ← Back to Home
+
+            </a>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- AUTHENTICATION JAVASCRIPT -->
+
+    <script src="../js/auth.js"></script>
+
+
+</body>
+
+</html>

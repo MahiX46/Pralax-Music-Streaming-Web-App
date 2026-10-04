@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Playlist | Pralax 🎵</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <nav class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="brand">
+
+            <img
+                src="../images/sidebar.png"
+                alt="Pralax"
+            >
+
+        </div>
+
+
+
+        <!-- ======================================
+             NAVIGATION
+        ======================================= -->
+
+        <div class="navigation">
+
+
+            <!-- HOME -->
+
+            <a
+                href="index.html"
+                class="nav-link"
+            >
+                <span>
+                    🏠 Home
+                </span>
+            </a>
+
+
+
+            <!-- SEARCH -->
+
+            <a
+                href="search.html"
+                class="nav-link"
+            >
+                <span>
+                    🔍 Search
+                </span>
+            </a>
+
+
+
+            <!-- YOUR LIBRARY -->
+
+            <a
+                href="library.html"
+                class="nav-link"
+            >
+                <span>
+                    🎵 Your Library
+                </span>
+            </a>
+
+
+        </div>
+
+
+
+        <!-- ======================================
+             YOUR MUSIC
+        ======================================= -->
+
+        <div class="playlist-menu">
+
+
+            <h3>
+                Your Music
+            </h3>
+
+
+
+            <!-- LIKED SONGS -->
+
+            <a
+                href="library.html"
+                class="nav-link"
+            >
+                <span>
+                    ❤️ Liked Songs
+                </span>
+            </a>
+
+
+
+            <!-- MY PLAYLIST -->
+
+            <a
+                href="playlist.html"
+                class="nav-link active"
+            >
+                <span>
+                    🎶 My Playlist
+                </span>
+            </a>
+
+
+        </div>
+
+
+    </nav>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- ======================================
+             PLAYLIST HEADER
+        ======================================= -->
+
+        <section class="playlist-header">
+
+
+            <div>
+
+
+                <p class="playlist-label">
+                    PLAYLIST
+                </p>
+
+
+                <h1>
+                    My Playlist
+                </h1>
+
+
+                <p id="playlistCount">
+                    0 songs
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ======================================
+             YOUR SONGS
+        ======================================= -->
+
+        <section class="playlist-section">
+
+
+            <div class="section-header">
+
+
+                <h2>
+                    Your Songs
+                </h2>
+
+
+            </div>
+
+
+
+            <!-- PLAYLIST SONGS LOAD HERE -->
+
+            <div
+                id="playlistSongs"
+                class="song-list"
+            >
+
+                <p>
+                    Loading playlist...
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==========================================
+         BOTTOM MUSIC PLAYER
+    =========================================== -->
+
+    <div class="music-player">
+
+
+        <!-- NOW PLAYING -->
+
+        <div class="now-playing">
+
+
+            <img
+                id="playerCover"
+                src="../images/logo.png"
+                alt="Song Cover"
+            >
+
+
+            <div class="song-details">
+
+
+                <h4 id="playerTitle">
+                    Select a song
+                </h4>
+
+
+                <p id="playerArtist">
+                    Pralax
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ======================================
+             PLAYER CENTER
+        ======================================= -->
+
+        <div class="player-center">
+
+
+            <!-- PLAYER BUTTONS -->
+
+            <div class="player-buttons">
+
+
+                <!-- PREVIOUS -->
+
+                <button
+                    type="button"
+                    onclick="previousSong()"
+                >
+                    ⏮
+                </button>
+
+
+
+                <!-- PLAY / PAUSE -->
+
+                <button
+                    type="button"
+                    id="playButton"
+                    class="play-button"
+                    onclick="togglePlay()"
+                >
+                    ▶
+                </button>
+
+
+
+                <!-- NEXT -->
+
+                <button
+                    type="button"
+                    onclick="nextSong()"
+                >
+                    ⏭
+                </button>
+
+
+            </div>
+
+
+
+            <!-- ==================================
+                 PROGRESS BAR
+            =================================== -->
+
+            <div class="progress-container">
+
+
+                <span id="currentTime">
+                    0:00
+                </span>
+
+
+                <input
+                    type="range"
+                    id="progressBar"
+                    min="0"
+                    max="100"
+                    value="0"
+                    oninput="changeProgress()"
+                >
+
+
+                <span id="duration">
+                    0:00
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ======================================
+             VOLUME
+        ======================================= -->
+
+        <div class="volume-container">
+
+
+            <span>
+                🔊
+            </span>
+
+
+            <input
+                type="range"
+                id="volumeBar"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+                oninput="changeVolume()"
+            >
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==========================================
+         AUDIO PLAYER
+    =========================================== -->
+
+    <audio
+        id="audioPlayer"
+        preload="metadata"
+    >
+    </audio>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script src="../js/player.js"></script>
+
+    <script src="../js/playlist.js"></script>
+
+
+</body>
+
+</html>
