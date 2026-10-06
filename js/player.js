@@ -28,7 +28,6 @@ function playSong(index) {
 
     // Load actual MP3 from backend
     audioPlayer.src = song.audio;
-
     audioPlayer.load();
 
 
@@ -46,7 +45,8 @@ function playSong(index) {
         document.getElementById("playerArtist");
 
     if (artist) {
-        artist.textContent = song.artist;
+        artist.textContent =
+            song.artist || "Unknown Artist";
     }
 
 
@@ -109,7 +109,7 @@ function togglePlay() {
     }
 
 
-    // No song selected yet
+    // No song selected
     if (!audioPlayer.src) {
 
         playSong(0);
@@ -120,20 +120,42 @@ function togglePlay() {
 
     if (audioPlayer.paused) {
 
-        audioPlayer.play();
+        audioPlayer.play()
 
-        document.getElementById(
-            "playButton"
-        ).textContent = "⏸";
+            .then(function () {
+
+                const button =
+                    document.getElementById(
+                        "playButton"
+                    );
+
+                if (button) {
+                    button.textContent = "⏸";
+                }
+
+            })
+
+            .catch(function (error) {
+
+                console.error(
+                    "Playback error:",
+                    error
+                );
+
+            });
 
     } else {
 
         audioPlayer.pause();
 
-        document.getElementById(
-            "playButton"
-        ).textContent = "▶";
+        const button =
+            document.getElementById(
+                "playButton"
+            );
 
+        if (button) {
+            button.textContent = "▶";
+        }
     }
 }
 
@@ -296,6 +318,10 @@ function changeProgress() {
             "progressBar"
         );
 
+    if (!progressBar) {
+        return;
+    }
+
 
     audioPlayer.currentTime =
         (
@@ -315,6 +341,10 @@ function changeVolume() {
         document.getElementById(
             "volumeBar"
         );
+
+    if (!volumeBar) {
+        return;
+    }
 
 
     audioPlayer.volume =

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -11,9 +12,12 @@
 
     <link rel="stylesheet"
           href="../css/style.css">
+
 </head>
 
+
 <body>
+
 
     <!-- ==========================================
          SIDEBAR
@@ -22,51 +26,103 @@
     <nav class="sidebar">
 
         <div class="brand">
-            <img src="../images/sidebar.png" alt="Pralax">
+
+            <img
+                src="../images/sidebar.png"
+                alt="Pralax">
+
         </div>
 
 
-        <!-- NAVIGATION -->
+        <!-- ======================================
+             NAVIGATION
+        ======================================= -->
 
         <div class="navigation">
 
-            <a href="index.html"
-               class="nav-link active">
-                <span>🏠 Home</span>
+
+            <!-- HOME -->
+
+            <a href="#"
+               class="nav-link active"
+               data-page="home">
+
+                <span>
+                    🏠 Home
+                </span>
+
             </a>
 
-            <a href="search.html"
-               class="nav-link">
-                <span>🔍 Search</span>
+
+            <!-- SEARCH -->
+
+            <a href="#"
+               class="nav-link"
+               data-page="search">
+
+                <span>
+                    🔍 Search
+                </span>
+
             </a>
 
-            <a href="library.html"
-               class="nav-link">
-                <span>🎵 Your Library</span>
+
+            <!-- YOUR LIBRARY -->
+
+            <a href="#"
+               class="nav-link"
+               data-page="library">
+
+                <span>
+                    🎵 Your Library
+                </span>
+
             </a>
+
 
         </div>
 
 
-        <!-- YOUR MUSIC -->
+        <!-- ======================================
+             YOUR MUSIC
+        ======================================= -->
 
         <div class="playlist-menu">
 
-            <h3>Your Music</h3>
+            <h3>
+                Your Music
+            </h3>
 
-            <a href="library.html"
-               class="nav-link">
-                <span>❤️ Liked Songs</span>
+
+            <!-- LIKED SONGS -->
+
+            <a href="#"
+               class="nav-link"
+               data-page="library">
+
+                <span>
+                    ❤️ Liked Songs
+                </span>
+
             </a>
 
-            <a href="playlist.html"
-               class="nav-link">
-                <span>🎶 My Playlist</span>
+
+            <!-- MY PLAYLIST -->
+
+            <a href="#"
+               class="nav-link"
+               data-page="playlist">
+
+                <span>
+                    🎶 My Playlist
+                </span>
+
             </a>
 
         </div>
 
     </nav>
+
 
 
     <!-- ==========================================
@@ -82,6 +138,9 @@
 
         <header class="topbar">
 
+
+            <!-- SEARCH BAR -->
+
             <div class="search-container">
 
                 <input
@@ -90,8 +149,11 @@
                     placeholder="Search songs, artists or albums..."
                 >
 
+
                 <button onclick="searchSongs()">
+
                     🔍
+
                 </button>
 
             </div>
@@ -104,145 +166,193 @@
                 class="auth-area">
             </div>
 
+
         </header>
 
 
-        <!-- ======================================
-             PRALAX HERO BANNER
-        ======================================= -->
-
-        <section class="pralax-banner">
-
-            <img
-                src="../images/logo.png"
-                alt="Pralax"
-                class="pralax-banner-image"
-            >
-
-            <div class="pralax-banner-overlay">
-            </div>
-
-
-            <div class="pralax-banner-text">
-
-                <h1>
-                    Your Music. Your World.
-                </h1>
-
-                <p>
-                    Discover, play and enjoy your favourite music.
-                </p>
-
-            </div>
-
-        </section>
-
 
         <!-- ======================================
-             QUICK PICKS
+             DYNAMIC PAGE CONTENT
+
+             IMPORTANT:
+             Only this area changes when
+             Home / Search / Library / Playlist
+             is selected.
+
+             Music player is NOT inside this div.
         ======================================= -->
 
-        <section class="music-section">
-
-            <div class="section-header">
-
-                <h2>
-                    Quick Picks
-                </h2>
-
-            </div>
+        <div id="pageContent">
 
 
-            <div
-                id="quickPicks"
-                class="card-container">
-            </div>
+            <!-- ==================================
+                 PRALAX HERO BANNER
+            =================================== -->
 
-        </section>
-
-
-        <!-- ======================================
-             POPULAR SONGS
-        ======================================= -->
-
-        <section class="music-section">
-
-            <div class="section-header">
-
-                <h2>
-                    Popular Songs
-                </h2>
-
-            </div>
+            <section class="pralax-banner">
 
 
-            <div
-                id="songList"
-                class="song-list">
-            </div>
-
-        </section>
-
-
-        <!-- ======================================
-             POPULAR ALBUMS
-        ======================================= -->
-
-        <section class="music-section">
-
-            <div class="section-header">
-
-                <h2>
-                    Popular Albums
-                </h2>
-
-            </div>
+                <img
+                    src="../images/logo.png"
+                    alt="Pralax"
+                    class="pralax-banner-image"
+                >
 
 
-            <div
-                id="albumList"
-                class="card-container">
-            </div>
-
-        </section>
+                <div class="pralax-banner-overlay">
+                </div>
 
 
-        <!-- ======================================
-             POPULAR ARTISTS
-        ======================================= -->
-
-        <section class="music-section">
-
-            <div class="section-header">
-
-                <h2>
-                    Popular Artists
-                </h2>
-
-            </div>
+                <div class="pralax-banner-text">
 
 
-            <div
-                id="artistList"
-                class="artist-container">
-            </div>
+                    <h1>
+                        Your Music. Your World.
+                    </h1>
 
-        </section>
+
+                    <p>
+                        Discover, play and enjoy
+                        your favourite music.
+                    </p>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ==================================
+                 QUICK PICKS
+            =================================== -->
+
+            <section class="music-section">
+
+
+                <div class="section-header">
+
+                    <h2>
+                        Quick Picks
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="quickPicks"
+                    class="card-container">
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ==================================
+                 POPULAR SONGS
+            =================================== -->
+
+            <section class="music-section">
+
+
+                <div class="section-header">
+
+                    <h2>
+                        Popular Songs
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="songList"
+                    class="song-list">
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ==================================
+                 POPULAR ALBUMS
+            =================================== -->
+
+            <section class="music-section">
+
+
+                <div class="section-header">
+
+                    <h2>
+                        Popular Albums
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="albumList"
+                    class="card-container">
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ==================================
+                 POPULAR ARTISTS
+            =================================== -->
+
+            <section class="music-section">
+
+
+                <div class="section-header">
+
+                    <h2>
+                        Popular Artists
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="artistList"
+                    class="artist-container">
+                </div>
+
+
+            </section>
+
+
+        </div>
+        <!-- END pageContent -->
 
 
     </main>
 
 
+
     <!-- ==========================================
-         BOTTOM MUSIC PLAYER
+         PERMANENT BOTTOM MUSIC PLAYER
+
+         IMPORTANT:
+         This is outside pageContent.
+         Therefore SPA navigation does not
+         remove or recreate the player.
     =========================================== -->
 
     <div class="music-player">
 
 
-        <!-- NOW PLAYING -->
+        <!-- ======================================
+             NOW PLAYING
+        ======================================= -->
 
         <div class="now-playing">
+
 
             <img
                 id="playerCover"
@@ -253,17 +363,26 @@
 
             <div class="song-details">
 
+
                 <h4 id="playerTitle">
+
                     Select a song
+
                 </h4>
 
+
                 <p id="playerArtist">
+
                     Pralax
+
                 </p>
+
 
             </div>
 
+
         </div>
+
 
 
         <!-- ======================================
@@ -277,32 +396,52 @@
 
             <div class="player-buttons">
 
+
+                <!-- PREVIOUS -->
+
                 <button onclick="previousSong()">
+
                     ⏮
+
                 </button>
 
+
+                <!-- PLAY / PAUSE -->
 
                 <button
                     id="playButton"
                     class="play-button"
                     onclick="togglePlay()">
+
                     ▶
+
                 </button>
 
+
+                <!-- NEXT -->
 
                 <button onclick="nextSong()">
+
                     ⏭
+
                 </button>
+
 
             </div>
 
 
-            <!-- PROGRESS -->
+
+            <!-- ==================================
+                 PROGRESS BAR
+            =================================== -->
 
             <div class="progress-container">
 
+
                 <span id="currentTime">
+
                     0:00
+
                 </span>
 
 
@@ -317,12 +456,17 @@
 
 
                 <span id="duration">
+
                     0:00
+
                 </span>
+
 
             </div>
 
+
         </div>
+
 
 
         <!-- ======================================
@@ -330,6 +474,7 @@
         ======================================= -->
 
         <div class="volume-container">
+
 
             <span>
                 🔊
@@ -346,14 +491,18 @@
                 oninput="changeVolume()"
             >
 
+
         </div>
 
 
     </div>
 
 
+
     <!-- ==========================================
-         AUDIO
+         PERMANENT AUDIO ELEMENT
+
+         DO NOT move this inside pageContent.
     =========================================== -->
 
     <audio
@@ -362,15 +511,32 @@
     </audio>
 
 
+
     <!-- ==========================================
          JAVASCRIPT
+
+         ORDER IS IMPORTANT
     =========================================== -->
+
+
+    <!-- MUSIC PLAYER -->
 
     <script src="../js/player.js"></script>
 
+
+    <!-- MAIN PRALAX FUNCTIONS -->
+
     <script src="../js/app.js"></script>
 
+
+    <!-- LOGIN / SIGNUP -->
+
     <script src="../js/auth.js"></script>
+
+
+    <!-- SINGLE PAGE NAVIGATION -->
+
+    <script src="../js/spa.js"></script>
 
 
 </body>
